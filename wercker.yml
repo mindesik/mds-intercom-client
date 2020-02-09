@@ -9,11 +9,17 @@ build:
         name: install dependencies
         code: yarn install
 
-publish:
+test:
   steps:
     - script:
-      name: install packages
-      code: apk add ansible openssh rsync curl py-pip zip
+      name: add token
+      code: echo $INTERCOM_TOKEN >> .env
+    - scirpt:
+      name: test
+      code: yarn test
+
+publish:
+  steps:
     - script:
       name: publish to npm
       code: npm publish
