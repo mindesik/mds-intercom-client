@@ -2,7 +2,7 @@
 
 Simple intercom.io client with Promises
 
-## Usage
+## Examples
 
 All parameters described in official documentarion at https://developers.intercom.com/intercom-api-reference/reference#introduction.
 
@@ -17,17 +17,11 @@ intercom.contacts.create({
   type: 'lead',
   email: 'john@example.com',
   name: 'John',
+}).then(contact => {
+  console.log(contact)
+}).catch(err => {
+  console.error(err)
 })
-
-// List tags
-intercom.tags.list()
-
-// Attach a tag
-intercom.contacts.attachTag(contactId, tagId)
-
-// Detach a tag
-intercom.contacts.detachTag(contactId, tagId)
-
 ```
 
 ## Testing
