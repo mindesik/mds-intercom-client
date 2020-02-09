@@ -4,7 +4,9 @@ Simple intercom.io client with Promises
 
 ## Usage
 
-All functions returns a Promise
+All parameters described in official documentarion at https://developers.intercom.com/intercom-api-reference/reference#introduction.
+
+All functions returns a Promise with API response.
 
 ```javascript
 const Intercom = require('mds-intercom-client')
@@ -31,11 +33,12 @@ intercom.contacts.detachTag(contactId, tagId)
 ## Testing
 
 ```
+echo $INTERCOM_TOKEN > .env
 yarn install
 yarn test
 ```
 
-## Implemented
+## Status
 
 ### USERS
 - Users
