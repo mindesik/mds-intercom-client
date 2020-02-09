@@ -25,3 +25,10 @@ intercom.contacts.attachTag(contactId, tagId)
 intercom.contacts.detachTag(contactId, tagId)
 
 ```
+
+## Testing
+
+```
+yarn install
+yarn test
+```
