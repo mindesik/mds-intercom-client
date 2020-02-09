@@ -1,0 +1,19 @@
+box: node:10.15.3-alpine
+
+build:
+  steps:
+    - script:
+        name: install packages
+        code: apk add yarn python make g++ curl --virtual
+    - script:
+        name: install dependencies
+        code: yarn install
+
+publish:
+  steps:
+    - script:
+      name: install packages
+      code: apk add ansible openssh rsync curl py-pip zip
+    - script:
+      name: publish to npm
+      code: npm publish
