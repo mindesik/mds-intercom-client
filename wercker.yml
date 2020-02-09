@@ -14,7 +14,7 @@ test:
     - script:
       name: add token
       code: echo $INTERCOM_TOKEN >> .env
-    - scirpt:
+    - script:
       name: test
       code: yarn test
 
