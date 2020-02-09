@@ -1,4 +1,4 @@
-box: node:10.15.3-alpine
+box: node:10.19.0-alpine
 
 build:
   steps:
