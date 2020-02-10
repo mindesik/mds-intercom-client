@@ -26,16 +26,6 @@ intercom.contacts.create({
 })
 ```
 
-## Testing
-
-Create `.env` file with your Intercom application token and run `yarn test`:
-
-```
-echo $INTERCOM_TOKEN > .env
-yarn install
-yarn test
-```
-
 ## Status
 
 ### USERS
@@ -89,3 +79,13 @@ yarn test
 - Detach a conversation
 - Untag companies
 - ✅ List all tags
+
+## Testing
+
+Create `.env` file with your Intercom application token and run `yarn test`:
+
+```
+echo $INTERCOM_TOKEN > .env
+yarn install
+yarn test
+```
