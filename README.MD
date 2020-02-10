@@ -2,7 +2,7 @@
 
 [![wercker status](https://app.wercker.com/status/cfad82b56def81730c3d72a1f27eaf30/s/ "wercker status")](https://app.wercker.com/project/byKey/cfad82b56def81730c3d72a1f27eaf30)
 
-Simple intercom.io client with Promises
+Simple intercom.io client with Promises for nodejs.
 
 This library supports Intercom API v2.0, all parameters described in official documentarion at https://developers.intercom.com/intercom-api-reference/reference.
 
@@ -24,16 +24,6 @@ intercom.contacts.create({
 }).catch(err => {
   console.error(err)
 })
-```
-
-## Testing
-
-Create `.env` file with your Intercom application token and run `yarn test`:
-
-```
-echo $INTERCOM_TOKEN > .env
-yarn install
-yarn test
 ```
 
 ## Status
@@ -89,3 +79,13 @@ yarn test
 - Detach a conversation
 - Untag companies
 - ✅ List all tags
+
+## Testing
+
+Create `.env` file with your Intercom application token and run `yarn test`:
+
+```
+echo $INTERCOM_TOKEN > .env
+yarn install
+yarn test
+```
