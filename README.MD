@@ -2,7 +2,7 @@
 
 [![wercker status](https://app.wercker.com/status/cfad82b56def81730c3d72a1f27eaf30/s/ "wercker status")](https://app.wercker.com/project/byKey/cfad82b56def81730c3d72a1f27eaf30)
 
-Simple intercom.io client with Promises.
+Simple intercom.io client with Promises for nodejs.
 
 This library supports Intercom API v2.0, all parameters described in official documentarion at https://developers.intercom.com/intercom-api-reference/reference.
 
