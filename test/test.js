@@ -1,5 +1,6 @@
 require('dotenv').config()
 const assert = require('assert')
+const { describe, it } = require('mocha')
 
 const Intercom = require('../index')
 const intercom = new Intercom(process.env.INTERCOM_TOKEN)
