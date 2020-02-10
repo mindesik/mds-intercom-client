@@ -1,16 +1,13 @@
-box: node:10.15.3-alpine
+box: node:10.19.0-alpine
 
-build:
+build-and-test:
   steps:
     - script:
         name: install packages
-        code: apk add yarn python make g++ curl --virtual
+        code: apk add yarn python make g++
     - script:
         name: install dependencies
         code: yarn install
-
-test:
-  steps:
     - script:
       name: add token
       code: echo $INTERCOM_TOKEN >> .env

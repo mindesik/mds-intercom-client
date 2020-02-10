@@ -1,12 +1,14 @@
 # mds-intercom-client
 
+[![wercker status](https://app.wercker.com/status/cfad82b56def81730c3d72a1f27eaf30/s/ "wercker status")](https://app.wercker.com/project/byKey/cfad82b56def81730c3d72a1f27eaf30)
+
 Simple intercom.io client with Promises
 
-## Usage
+This library supports Intercom API v2.0, all parameters described in official documentarion at https://developers.intercom.com/intercom-api-reference/reference.
 
-All parameters described in official documentarion at https://developers.intercom.com/intercom-api-reference/reference#introduction.
+Functions returns a Promise with API response.
 
-All functions returns a Promise with API response.
+## Examples
 
 ```javascript
 const Intercom = require('mds-intercom-client')
@@ -17,20 +19,16 @@ intercom.contacts.create({
   type: 'lead',
   email: 'john@example.com',
   name: 'John',
+}).then(contact => {
+  console.log(contact)
+}).catch(err => {
+  console.error(err)
 })
-
-// List tags
-intercom.tags.list()
-
-// Attach a tag
-intercom.contacts.attachTag(contactId, tagId)
-
-// Detach a tag
-intercom.contacts.detachTag(contactId, tagId)
-
 ```
 
 ## Testing
+
+Create `.env` file with your Intercom application token and run `yarn test`:
 
 ```
 echo $INTERCOM_TOKEN > .env
