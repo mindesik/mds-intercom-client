@@ -69,18 +69,17 @@ class Contacts {
     })
   }
   
-  // TODO: detaching tags is not working on intercom end
   /**
    * Detach a tag (Detach a contact)
    * https://developers.intercom.com/intercom-api-reference/reference#detach-contact-from-company
    * @param {String} id
    * @param {String} tagId
    */
-  // detachTag(id, tagId) {
-  //   return this.client.delete(`/contacts/${id}/tags`, {
-  //     id: tagId,
-  //   })
-  // }
+  detachTag(id, tagId) {
+    return callResult(_ => {
+      return this.client.delete(`/contacts/${id}/tags/${tagId}`)
+    })
+  }
 }
 
 module.exports = Contacts

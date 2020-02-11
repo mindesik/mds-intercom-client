@@ -92,15 +92,18 @@ describe('Contacts', function() {
     }).then(tag => {
       tagId = tag.id
       return intercom.contacts.attachTag(contactId, tagId)
-    // TODO: detaching tags is not working on intercom end
-    // }).then(_ => {
-      // return intercom.contacts.detachTag(contactId, tagId)
+    }).then(tag => {
+      assert.equal(tag.id, tagId)
+      return intercom.contacts.detachTag(contactId, tagId)
     }).then(tag => {
       assert.equal(tag.id, tagId)
       return intercom.tags.delete(tagId)
     }).then(_ => {
       done()
-    }).catch(done)
+    }).catch(err => {
+      console.error(err)
+      done(err)
+    })
   })
   
   it('should delete a contact', function(done) {
