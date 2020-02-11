@@ -75,7 +75,7 @@ intercom.contacts.create({
 - ✅ Attach a contact
 - Attach a conversation
 - Tag companies
-- Detach a contact
+- ✅ Detach a contact
 - Detach a conversation
 - Untag companies
 - ✅ List all tags
