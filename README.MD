@@ -49,7 +49,7 @@ intercom.contacts.create({
 - Retrieve a visitor
 - Update a visitor
 - Delete a visitor
-- Convert a visitor
+- ✅ Convert a visitor
 
 ### COMPANIES
 - Create or update a company

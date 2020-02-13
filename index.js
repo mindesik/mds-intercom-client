@@ -1,6 +1,7 @@
 const axios = require('axios')
 const Contacts = require('./resources/contacts')
 const Tags = require('./resources/tags')
+const Visitors = require('./resources/visitors')
 
 class Intercom {
   /**
@@ -21,6 +22,7 @@ class Intercom {
     
     this.contacts = new Contacts(this.client)
     this.tags = new Tags(this.client)
+    this.visitors = new Visitors(this.client)
   }
 }
 
