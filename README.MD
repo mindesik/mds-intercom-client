@@ -66,8 +66,8 @@ intercom.contacts.create({
 - List all data attributes
 
 ### DATA EVENTS
-- Submit a data event
-- List all data events
+- ✅ Submit a data event
+- ✅ List all data events
 
 ### TAGS
 - ✅ Create or update a tag

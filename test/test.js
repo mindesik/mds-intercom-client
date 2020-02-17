@@ -5,10 +5,18 @@ const { describe, it } = require('mocha')
 const Intercom = require('../index')
 const intercom = new Intercom(process.env.INTERCOM_TOKEN)
 
+const generateData = _ => {
+  let timestamp = Date.now()
+  
+  return {
+    tagname: `${timestamp}_test`,
+    email: `${timestamp}@example.com`,
+  }
+}
+
 describe('Tags', function() {
   this.timeout(30000)
-  let timestamp = Date.now()
-  let tagname = `${timestamp}_test`
+  let { tagname } = generateData()
   let tagId = null
   
   it('shoud create a tag', function(done) {
@@ -35,12 +43,46 @@ describe('Tags', function() {
   })
 })
 
+describe('Events', function() {
+  let { email } = generateData()
+  
+  it('should create a contact', function(done) {
+    intercom.contacts.create({
+      name: `Test`,
+      role: `user`,
+      email: email,
+    }).then(contact =>{
+      assert.equal(contact.email, email)
+      done()
+    }).catch(done)
+  })
+  
+  it('should submit an event', function(done) {
+    intercom.events.submit({
+      event_name : 'test-event',
+      created_at: Math.round(Date.now()/1000),
+      email: email,
+    }).then(result => {
+      done()
+    }).catch(done)
+  })
+  
+  it('should list an events', function(done) {
+    intercom.events.list({
+      type: 'user',
+      email: email,
+    }).then(result => {
+      assert.ok(result.events.length > 0)
+      assert.equal(result.events[0].email, email)
+      done()
+    }).catch(done)
+  })
+})
+
 describe('Contacts', function() {
   this.timeout(30000)
-  let timestamp = Date.now()
-  let tagname = `${timestamp}_test`
+  let { tagname, email } = generateData()
   let tagId = null
-  let email = `${timestamp}@example.com`
   let contactId = null
   
   it('should create a contact', function(done) {
