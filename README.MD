@@ -8,6 +8,10 @@ This library supports Intercom API v2.0, all parameters described in official do
 
 Functions returns a Promise with API response.
 
+## Installation
+
+`npm install mds-intercom-client` or `yarn add mds-intercom-client`
+
 ## Examples
 
 ```javascript
@@ -27,12 +31,6 @@ intercom.contacts.create({
 ```
 
 ## Status
-
-### USERS
-- Users
-
-### LEADS
-- Leads
 
 ### CONTACTS
 - ✅ Create a contact
