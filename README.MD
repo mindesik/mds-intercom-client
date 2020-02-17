@@ -28,12 +28,6 @@ intercom.contacts.create({
 
 ## Status
 
-### USERS
-- Users
-
-### LEADS
-- Leads
-
 ### CONTACTS
 - ✅ Create a contact
 - ✅ Retrieve a contact
