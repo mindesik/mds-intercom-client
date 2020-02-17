@@ -7,6 +7,11 @@
   "author": "De Sik Min <mindesik@icloud.com>",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "intercom",
+    "intercom client",
+    "intercom api"
+  ],
   "dependencies": {
     "axios": "^0.19.2"
   },
