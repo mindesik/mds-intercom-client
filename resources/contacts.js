@@ -45,6 +45,21 @@ class Contacts {
   }
   
   /**
+   * Merge two contacts
+   * https://developers.intercom.com/intercom-api-reference/reference#merge-contact
+   * @param {String} from 
+   * @param {String} into 
+   */
+  merge(from, into) {
+    return callResult(_ => {
+      return this.client.post('/contacts/merge', {
+        from: from,
+        into: into,
+      })
+    })
+  }
+  
+  /**
    * Delete a contact
    * https://developers.intercom.com/intercom-api-reference/reference#delete-contact
    * @param {String} id
