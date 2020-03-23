@@ -37,7 +37,7 @@ intercom.contacts.create({
 - ✅ Retrieve a contact
 - ✅ Update a contact
 - ✅ Delete a contact
-- Merge two contacts
+- ✅ Merge two contacts
 - ✅ Search for contacts
 - List all contacts
 - List attached companies
