@@ -1,3 +1,4 @@
 /wercker.yml
 /.env
 /.npmrc
+/wercker.yml

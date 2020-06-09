@@ -2,9 +2,15 @@ module.exports = {
   callResult: promise => {
     return new Promise((resolve, reject) => {
       promise().then(response => {
-        resolve(response.data)
+        return resolve(response.data)
       }).catch(err => {
-        reject(err.response.data)
+        if (err.response) {
+          if (err.response.data) {
+            return reject(err.response.data)
+          }
+        }
+        
+        return reject(err)
       })
     })
   }
