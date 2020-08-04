@@ -6,8 +6,8 @@ const Events = require('./resources/events')
 
 class Intercom {
   /**
-   * 
-   * @param {String} apiKey 
+   *
+   * @param {String} apiKey
    */
   constructor(apiKey) {
     this.apiKey = apiKey
@@ -18,9 +18,10 @@ class Intercom {
         'Authorization': `Bearer ${this.apiKey}`,
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'Intercom-version': '2.0',
       }
     })
-    
+
     this.contacts = new Contacts(this.client)
     this.tags = new Tags(this.client)
     this.visitors = new Visitors(this.client)
