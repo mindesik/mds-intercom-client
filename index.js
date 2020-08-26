@@ -9,7 +9,7 @@ class Intercom {
    * 
    * @param {String} apiKey 
    */
-  constructor(apiKey) {
+  constructor(apiKey, options) {
     this.apiKey = apiKey
     this.client = axios.create({
       baseURL: 'https://api.intercom.io/',
@@ -18,7 +18,8 @@ class Intercom {
         'Authorization': `Bearer ${this.apiKey}`,
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-      }
+      },
+      ...options,
     })
     
     this.contacts = new Contacts(this.client)
